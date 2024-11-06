@@ -11,13 +11,23 @@ function MyApp23(props) {
       >
         Lorem ipsum dolor.
       </h1>
-      <p style={{ paddingLeft: "50px", border: "green" }}>
+      <p
+        style={{
+          paddingLeft: "50px",
+          border: " 2px dotted green",
+        }}
+      >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque
         beatae est excepturi facilis, quia quod. Accusamus aspernatur delectus
         eos harum laborum necessitatibus non officiis quis sapiente unde. Ad,
         ducimus.
       </p>
-      <ul style={{ listStyleType: "cjk-decimal", color: "darkblue" }}>
+      <ul
+        style={{
+          listStyleType: "cjk-decimal",
+          color: "darkblue",
+        }}
+      >
         <li>Lorem.</li>
         <li>Illum.</li>
         <li>Impedit.</li>

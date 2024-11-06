@@ -3,7 +3,7 @@ import React from "react";
 function MeApp24(props) {
   return (
     <div>
-      <MyButton color={"red"}>Click!</MyButton>
+      <MyButton color={"black"}>Click!</MyButton>
       <MyButton color={"blue"}>Click!</MyButton>
     </div>
   );
@@ -12,7 +12,14 @@ function MeApp24(props) {
 function MyButton({ color, children }) {
   return (
     <div>
-      <button style={{ color: color }}>{children}</button>
+      <button
+        style={{
+          backgroundColor: color,
+          color: color === "black" ? "green" : "red",
+        }}
+      >
+        {children}
+      </button>
     </div>
   );
 }
