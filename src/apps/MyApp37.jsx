@@ -4,13 +4,13 @@ import { Box } from "@chakra-ui/react";
 
 function MyApp37(props) {
   const [number, setNumber] = useState(0);
-  function fun1() {
+  function handleClick() {
     setNumber(number + 1);
   }
 
   return (
     <div>
-      <Button onClick={fun1}> 값 증가</Button>
+      <Button onClick={handleClick}> 값 증가</Button>
       <Button
         onClick={() => {
           setNumber(number - 1);
