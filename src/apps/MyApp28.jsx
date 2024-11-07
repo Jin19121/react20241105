@@ -1,13 +1,36 @@
 import React from "react";
-import { Input, Textarea } from "@chakra-ui/react";
+import { Icon, Input, Textarea } from "@chakra-ui/react";
 import { Field } from "../components/ui/field.jsx";
 import { Checkbox } from "../components/ui/checkbox.jsx";
 import { HiOutlinePlus } from "react-icons/hi";
 import { Radio, RadioGroup } from "../components/ui/radio.jsx";
+import { Switch } from "../components/ui/switch.jsx";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 function MyApp28(props) {
   return (
     <div style={{ margin: "10px" }}>
+      <h5>switch</h5>
+      <Switch colorPalette="pink">in love</Switch> <br />
+      <Switch variant={"raised"}>alive</Switch> <br />
+      <Switch
+        colorPalette="blue"
+        size="lg"
+        trackLabel={{
+          on: (
+            <Icon color="orange.400">
+              <FaSun />
+            </Icon>
+          ),
+          off: (
+            <Icon color="yellow.400">
+              <FaMoon />
+            </Icon>
+          ),
+        }}
+      >
+        Time
+      </Switch>
       <h5>Radio Button</h5>
       <RadioGroup>
         <Radio value={1}> option1</Radio> <br />
