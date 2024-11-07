@@ -39,12 +39,4 @@ function MyApp36(props) {
   );
 }
 
-function fun1() {
-  let text;
-}
-
-function fun2() {
-  message = "두번째 상태";
-}
-
 export default MyApp36;
