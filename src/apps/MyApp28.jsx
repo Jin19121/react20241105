@@ -12,7 +12,10 @@ function MyApp28(props) {
     <div style={{ margin: "10px" }}>
       <h5>switch</h5>
       <Switch colorPalette="pink">in love</Switch> <br />
-      <Switch variant={"raised"}>alive</Switch> <br />
+      <Switch variant={"raised"} colorPalette={"green"}>
+        alive
+      </Switch>{" "}
+      <br />
       <Switch
         colorPalette="blue"
         size="lg"
@@ -31,12 +34,14 @@ function MyApp28(props) {
       >
         Time
       </Switch>
+      <hr />
       <h5>Radio Button</h5>
       <RadioGroup>
         <Radio value={1}> option1</Radio> <br />
         <Radio value={2}> option2</Radio> <br />
         <Radio value={3}> option3</Radio>
       </RadioGroup>
+      <hr />
       <h5>checkbox</h5>
       <Checkbox icon={<HiOutlinePlus />}>different?</Checkbox>
       <br />
