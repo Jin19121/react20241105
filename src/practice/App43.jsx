@@ -31,7 +31,7 @@ function App43(props) {
       <Field label={"주소"}>
         <Input
           value={person.info.address}
-          onClick={(e) => {
+          onChange={(e) => {
             setPerson({
               ...person,
               info: { ...person.info, address: e.target.value },
@@ -42,7 +42,7 @@ function App43(props) {
       <Field label={"이메일"}>
         <Input
           value={person.info.email}
-          onClick={(e) => {
+          onChange={(e) => {
             setPerson({
               ...person,
               info: { ...person.info, email: e.target.value },
@@ -52,7 +52,7 @@ function App43(props) {
       </Field>
       <Field label={"자기 소개"}>
         <Textarea
-          onClick={(e) => {
+          onChange={(e) => {
             setPerson({
               ...person,
               info: { ...person.info, description: e.target.value },
