@@ -21,8 +21,8 @@ function MyApp41(props) {
       <Field label={"이름"}>
         <Input onKeyUp={handleNameKeyUp} />
       </Field>
-      <Field onKeyUp={handleAddressKeyUp} label={"주소"}>
-        <Input />
+      <Field label={"주소"}>
+        <Input onKeyUp={handleAddressKeyUp} />
       </Field>
       <hr />
       <ul>
