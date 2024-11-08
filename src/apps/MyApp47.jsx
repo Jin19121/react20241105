@@ -11,11 +11,12 @@ function Comp2({ message }) {
   return null;
 }
 
-function Comp3({ message }) {
+function Comp3(props) {
   return (
     <>
       <h3>comp3</h3>
-      <Comp4 message={message} />
+      <Comp4 message={props.message} />
+      <Comp5 {...props} />
     </>
   );
 }
@@ -26,6 +27,15 @@ function Comp4({ message }) {
       <h3>com4</h3>
       <Box>{message}</Box>
     </div>
+  );
+}
+
+function Comp5({ message }) {
+  return (
+    <Box>
+      <h3>comp5</h3>
+      <Box>{message}</Box>
+    </Box>
   );
 }
 
