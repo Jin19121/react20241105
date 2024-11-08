@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input } from "@chakra-ui/react";
+import { Input, Textarea } from "@chakra-ui/react";
 import { Field } from "../components/ui/field.jsx";
 import { Button } from "../components/ui/button.jsx";
 
@@ -51,14 +51,14 @@ function App43(props) {
         />
       </Field>
       <Field label={"자기 소개"}>
-        <Input
-          value={person.info.description}
+        <Textarea
           onClick={(e) => {
             setPerson({
               ...person,
               info: { ...person.info, description: e.target.value },
             });
           }}
+          value={person.info.description}
         />
       </Field>
       <Button
