@@ -9,6 +9,7 @@ function MyApp58(props) {
   p.append("city", "seoul");
   p.append("city", "busan");
   p.set("city", "jeju");
+
   const q = new URLSearchParams();
   q.append("email", "gmail");
   q.append("title", "소년");
@@ -25,9 +26,7 @@ function MyApp58(props) {
       </Button>
       <Button
         onClick={() => {
-          axios.get(`/hello?${p}`, {
-            params: p,
-          });
+          axios.get(`/hello?${p}`);
         }}
       >
         btn4
@@ -43,9 +42,9 @@ function MyApp58(props) {
       </Button>
       <Button
         onClick={() => {
-          axios.get("/hallo", {
-            param: {
-              address: "shinchoen",
+          axios.get("/hello", {
+            params: {
+              address: "shinchon",
               city: "seoul",
             },
           });
@@ -56,7 +55,7 @@ function MyApp58(props) {
       <Button
         onClick={() => {
           axios.get("/hi", {
-            param: {
+            params: {
               name: "son",
               age: 5,
             },
