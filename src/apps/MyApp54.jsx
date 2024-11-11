@@ -24,6 +24,7 @@ function MyComp({ text }) {
       console.log("클린업@", count);
     };
   }, [count]);
+
   useEffect(() => {
     //mount(initial render)
     console.log("mount!");
