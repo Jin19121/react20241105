@@ -20,14 +20,14 @@ function MyApp60(props) {
         <Input onChange={(e) => setCity(e.target.value)} value={city} />
       </Field>
 
-      <Button colorPalette={"blue"} onClick={handleClick()}>
+      <Button colorPalette={"blue"} onClick={handleClick}>
         전송
       </Button>
       <hr />
       <Button
         onClick={() => {
           // `{"name":"son", "age":33}`
-          axios.post("/api/main1/sub2", { name: "son", age: 33 });
+          axios.post("/api/main1/sub2");
         }}
       >
         btn2
