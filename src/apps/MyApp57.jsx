@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../components/ui/button.jsx";
+import axios from "axios";
 
 function MyApp57(props) {
   return (
@@ -7,6 +8,25 @@ function MyApp57(props) {
       {/*javaScript 사용*/}
       <Button
         onClick={() => {
+          axios.get("/h1");
+        }}
+      >
+        get 요청
+      </Button>
+      <Button
+        onClick={() => {
+          axios.post("/hello");
+        }}
+      >
+        post 요청
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
+          axios.request({
+            method: "get",
+            url: "/hi",
+          });
           axios;
         }}
       >
@@ -14,12 +34,15 @@ function MyApp57(props) {
       </Button>
       <Button
         onClick={() => {
-          axios;
+          axios.request({
+            method: "post",
+            url: "hello",
+          });
         }}
       >
         post 요청
       </Button>
-
+      <hr />
       {/*html 요소를 이용한 전송방식 (a, form)*/}
       {/*get 방식*/}
       <a href="/hi">to hi</a>
