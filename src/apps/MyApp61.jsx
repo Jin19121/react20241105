@@ -6,6 +6,21 @@ function MyApp61(props) {
   return (
     <div>
       <Button
+        onClick={() => {
+          axios.post("api/main1/sub9", [
+            { product: { name: "computer", price: 500 }, company: "samsung" },
+            { product: { name: "smart phone", price: 1500 }, company: "apple" },
+            {
+              product: { name: "graphic card", price: 2000 },
+              company: "nvida",
+            },
+          ]);
+        }}
+      >
+        btn5
+      </Button>
+      <hr />
+      <Button
         onClick={() =>
           axios.post("/api/main1/sub8", [
             { name: "kim", team: "Hipochi", age: "28" },
