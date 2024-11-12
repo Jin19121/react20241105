@@ -6,49 +6,16 @@ import {
 import { Field } from "../components/ui/field.jsx";
 import { Button } from "../components/ui/button.jsx";
 import axios from "axios";
-import { Box, Input } from "@chakra-ui/react";
-
-function SupplierView({ supplier }) {
-  if (!supplier) {
-    return (
-      <Box>
-        <p>조회된 공급자가 없습니다</p>
-      </Box>
-    );
-  }
-  return (
-    <div>
-      <Field label={"ID"} readonly>
-        <Input vale={supplier.id}></Input>
-      </Field>
-      <Field label={"공급자"} readonly>
-        <Input vale={supplier.name}></Input>
-      </Field>
-      <Field label={"연락처"} readonly>
-        <Input vale={supplier.contact}></Input>
-      </Field>
-      <Field label={"주소"} readonly>
-        <Input vale={supplier.address}></Input>
-      </Field>
-      <Field label={"도시"} readonly>
-        <Input vale={supplier.city}></Input>
-      </Field>
-      <Field label={"우편 번호"} readonly>
-        <Input vale={supplier.postalCode}></Input>
-      </Field>
-      <Field label={"국가"} readonly>
-        <Input vale={supplier.country}></Input>
-      </Field>
-    </div>
-  );
-}
+import { DataListItem, DataListRoot } from "../components/ui/data-list.jsx";
 
 function App66(props) {
   const [supplierId, setSupplierId] = useState(0);
   const [supplier, setSupplier] = useState(null);
 
   const handleButtonClick = () => {
-    axios.get(`/api/main6/sub2/${id}`).then((res) => setSupplier(res.data));
+    axios
+      .get(`/api/main6/sub2/${supplierId}`)
+      .then((res) => setSupplier(res.data));
   };
 
   return (
@@ -63,7 +30,20 @@ function App66(props) {
       </Field>
       <Button onClick={handleButtonClick}>조회</Button>
       <hr />
-      <SupplierView supplier={supplier} />
+      {supplier ? (
+        <DataListRoot>
+          <DataListItem label={"ID"} value={supplier.id} />
+          <DataListItem label={"공급자명"} value={supplier.name} />
+          <DataListItem label={"계약명"} value={supplier.contact} />
+          <DataListItem label={"주소"} value={supplier.address} />
+          <DataListItem label={"도시"} value={supplier.city} />
+          <DataListItem label={"우편번호"} value={supplier.postalCode} />
+          <DataListItem label={"국가"} value={supplier.country} />
+          <DataListItem label={"전화번호"} value={supplier.phone} />
+        </DataListRoot>
+      ) : (
+        <p>조회된 공급자가 없습니다.</p>
+      )}
     </div>
   );
 }
