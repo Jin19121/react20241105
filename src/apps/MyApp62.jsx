@@ -6,6 +6,18 @@ function MyApp62(props) {
   return (
     <div>
       <Button
+        onClick={() =>
+          axios.post("/api/main2/sub7", [
+            { title: "moby dick", author: "Herman Melville" },
+            { title: "Pride and Prejudice", author: "Jane Austen" },
+            { title: "Little Women", author: "Louisa May Alcott" },
+          ])
+        }
+      >
+        Click Book
+      </Button>
+      <hr />
+      <Button
         onClick={() => {
           axios.post("/api/main2/sub6", [
             { name: "dk", age: 28 },
