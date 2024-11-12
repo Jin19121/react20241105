@@ -8,6 +8,28 @@ function MyApp65(props) {
       <Button
         onClick={() => {
           axios
+            .get("/api/main5/sub5")
+            .then((r) => r.date)
+            .then((a) => console.log(a));
+        }}
+      >
+        click book
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
+          axios
+            .get("/api/main5/sub4")
+            .then((r) => r.data)
+            .then((d) => console.log(d));
+        }}
+      >
+        btn4
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
+          axios
             .get("/api/main5/sub3")
             .then((r) => r.data)
             .then((d) => console.log(d));
