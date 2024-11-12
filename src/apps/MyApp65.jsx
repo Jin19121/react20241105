@@ -8,9 +8,49 @@ function MyApp65(props) {
       <Button
         onClick={() => {
           axios
+            .get("/api/main5/sub7")
+            .then((res) => res.data)
+            .then((d) => {
+              console.log(d.product.name);
+              console.log(d.product.price);
+              console.log(d.company.location[0]);
+              console.log(d.company.location[1]);
+              console.log(d.product.quality);
+            });
+        }}
+      >
+        click product
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
+          axios
+            .get("/api/main5/sub6")
+            .then((res) => res.data)
+            .then((data) => {
+              console.log(data.name);
+              console.log(data.items[0]);
+              console.log(data.items[1]);
+              console.log(data.items[2]);
+              console.log(data.team.name);
+              console.log(data.team.location);
+            });
+        }}
+      >
+        btn6
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
+          axios
             .get("/api/main5/sub5")
-            .then((r) => r.date)
-            .then((a) => console.log(a));
+            .then((res) => res.data)
+            .then((book) => {
+              console.log(book.title);
+              console.log(book.content);
+              console.log(book.price);
+              console.log(book.available);
+            });
         }}
       >
         click book
@@ -21,7 +61,11 @@ function MyApp65(props) {
           axios
             .get("/api/main5/sub4")
             .then((r) => r.data)
-            .then((d) => console.log(d));
+            .then((d) => {
+              console.log(d);
+              console.log(d.name);
+              console.log(d.age);
+            });
         }}
       >
         btn4
