@@ -1,12 +1,12 @@
 import { createRoot } from "react-dom/client";
 import { Provider } from "./components/ui/provider.jsx";
 import { StrictMode } from "react";
-import MyApp73 from "./apps/MyApp73.jsx";
+import App73 from "./practice/App73.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider>
-      <MyApp73 />
+      <App73 />
     </Provider>
   </StrictMode>,
 );
