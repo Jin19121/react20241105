@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+import { Box, Input } from "@chakra-ui/react";
 import { Button } from "../components/ui/button.jsx";
 
 function MyHome() {
   const navigate = useNavigate();
-  const [text, setText] = useState("");
+  const [keyword, setKeyword] = useState("");
   const [params, setParams] = useSearchParams();
   console.log(params.toString());
   return (
     <Box>
+      <Input value={keyword} onChange={(e) => setKeyword(e.target.value)} />
       <Button
         onClick={() => {
           const p = new URLSearchParams();
-          p.append("page", 1);
+          p.set("keyword", keyword);
           setParams(p);
+        }}
+      >
+        검색
+      </Button>
+      <Button
+        onClick={() => {
+          // const p = new URLSearchParams();
+          // p.append("page", 1);
+          // params.append("page", 1);
+          // setParams(params);
+
+          const nextParam = new URLSearchParams(params);
+          nextParam.set("page", 1);
+          setParams(nextParam);
         }}
       >
         1
       </Button>
       <Button
         onClick={() => {
-          const p = new URLSearchParams();
-          p.append("page", 2);
+          const p = new URLSearchParams(params);
+          p.set("page", 2);
           setParams(p);
         }}
       >
@@ -35,8 +50,8 @@ function MyHome() {
       </Button>
       <Button
         onClick={() => {
-          const p = new URLSearchParams();
-          p.append("page", 3);
+          const p = new URLSearchParams(params);
+          p.set("page", 3);
           setParams(p);
         }}
       >
