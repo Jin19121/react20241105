@@ -16,10 +16,7 @@ const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <div>경로1의 홈페이지</div> },
-      {
-        path: "sub3",
-        element: <div>1번 경로 세 번째 길</div>,
-      },
+      { path: "sub3", element: <div>1번 경로 세 번째 길</div> },
     ],
   },
   {
@@ -38,10 +35,8 @@ const router = createBrowserRouter([
         index: true,
         element: "시작점",
       },
-      {
-        path: "sub1",
-        element: <div>분기점 3-1</div>,
-      },
+      { path: "sub1", element: <div>분기점 3-1</div> },
+      { path: "sub2", element: <div>분기점 3-2</div> },
     ],
   },
   {
