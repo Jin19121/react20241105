@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -8,7 +8,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/path1",
-    element: <div>1번 경로</div>,
+    element: (
+      <div>
+        1번 경로 <hr />
+        <Outlet />
+      </div>
+    ),
+    children: [
+      { index: true, element: <div>경로1의 홈페이지</div> },
+      {
+        path: "sub3",
+        element: <div>1번 경로 세 번째 길</div>,
+      },
+    ],
   },
   {
     path: "/path2",
@@ -16,7 +28,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/path3",
-    element: <div>3번 경로</div>,
+    element: (
+      <div>
+        3번 경로 <Outlet />
+      </div>
+    ),
+    children: [
+      {
+        index: true,
+        element: "시작점",
+      },
+      {
+        path: "sub1",
+        element: <div>분기점 3-1</div>,
+      },
+    ],
   },
   {
     path: "/path4",
