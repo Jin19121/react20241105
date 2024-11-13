@@ -14,6 +14,7 @@ function MyHome() {
   const navigate = useNavigate();
   const location = useLocation();
   const [params] = useSearchParams();
+
   // console.log("location", location.search);
   // console.log("params", params);
   console.log("params", params.toString());
@@ -25,9 +26,9 @@ function MyHome() {
 
   const handleClick = () => {
     const p = new URLSearchParams();
-    p.append("page", 1);
-    p.append("keyword", "한강");
-    p.append("type", "author");
+    p.set("page", 1);
+    p.set("keyword", "한강");
+    p.set("type", "author");
 
     axios.get(`/api/main9/list?${p}`);
   };
