@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import { Box, Flex } from "@chakra-ui/react";
 import { Button } from "../components/ui/button.jsx";
 
@@ -10,13 +15,13 @@ function WholePage() {
       <Box>
         <Flex gap={5}>
           <Box>
-            <a href="/">NavBar</a>
+            <Link to="/">NavBar</Link>
           </Box>
           <Box>
-            <a href="/sub1">sub1</a>
+            <Link to="/sub1">sub1</Link>
           </Box>
           <Box>
-            <a href="/sub2">sub2</a>
+            <Link to="/sub2">sub2</Link>
           </Box>
           <Box>
             <Button onClick={() => setCount(count + 1)}>{count}</Button>
