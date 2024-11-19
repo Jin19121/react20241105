@@ -7,6 +7,68 @@ function MyApp80(props) {
     <div>
       <Button
         onClick={() => {
+          axios
+            .get("/api/main9/sub4")
+            .then((res) => localStorage.setItem("token", res.data));
+        }}
+      >
+        Admin
+      </Button>
+      <Button
+        onClick={() => {
+          axios
+            .get("/api/main9/sub5")
+            .then((res) => localStorage.setItem("token", res.data));
+        }}
+      >
+        매니저
+      </Button>
+      <Button
+        onClick={() => {
+          axios
+            .get("/api/main9/sub6")
+            .then((res) => localStorage.setItem("token", res.data));
+        }}
+      >
+        Admin&매니저
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub7", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        관리자의 요청
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub8", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        매니저의 요청
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub9", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        관리자|매니저 요청
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
           axios.get("/api/main9/sub1").then((res) => {
             const token = res.data;
             // console.log(token);
