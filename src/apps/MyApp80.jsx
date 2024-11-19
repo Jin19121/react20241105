@@ -1,10 +1,36 @@
 import React from "react";
 import { Button } from "../components/ui/button.jsx";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 function MyApp80(props) {
   return (
     <div>
+      <Button
+        onClick={() => {
+          const token = localStorage.getItem("token");
+          const decoded = jwtDecode(token);
+          console.log(decoded);
+          console.log("id", decoded.sub);
+          console.log("권한", decoded.scope);
+          console.log("유효기간", new Date(decoded.exp * 1000));
+          console.log("발행시간", new Date(decoded.iat * 1000));
+        }}
+      >
+        jwt 디코드
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub10", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        사용자 정보
+      </Button>
+      <hr />
       <Button
         onClick={() => {
           axios
